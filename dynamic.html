@@ -15,20 +15,20 @@
 <div id="buttonbox">
     <h2 class="text-center m-5 p-5">The XMLHttpRequest Projects</h2>
     <div class="d-flex justify-content-center p-5 m-5">
-        <button class="btn btn-success " type="button" onclick="loadDoc()">Change Content</button>
+        <button class="btn btn-success " type="button" onclick="loadDoc()">Change Content</button><!-- button to call function -->
     </div>
 </div>
-<div class="flex-box justify-content-center text-center text-white bg-primary p-5"><h1 id="Content">Thie tex should change</h1></div>
+<div class="flex-box justify-content-center text-center text-white bg-primary p-5"><h1 id="Content">This text should change</h1></div>
     <script>
-    function loadDoc() {
-      const xhttp = new XMLHttpRequest();
-      xhttp.onload = function() {
-        document.getElementById("Content").innerHTML =
-        this.responseText;
+    function loadDoc() {/* name function  */
+      const xhttp = new XMLHttpRequest();/* creat a new xmlhttp request */
+      xhttp.onreadystatechange = function() {/* creating a function when state of server changes */
+        document.getElementById("Content").innerHTML =/* getting html element to modify */
+        this.responseText;/* equate th modification to the server response */
       }
-      xhttp.open("GET", "content.html");
-      xhttp.send();
-    }
+      xhttp.open("GET", "content.html");/* getting web pag contents with open method */
+      xhttp.send();/* sending the request to server */
+    }/* end process F5 to restart */
     </script>
 
 
